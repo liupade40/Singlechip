@@ -1,0 +1,22 @@
+# Keil generated user options file
+*.uvopt
+ 
+# Keil project file
+*.cproj
+ 
+# Debug and release folders
+Debug/
+Release/
+ 
+# Compiled target files
+*.hex
+*.bin
+*.axf
+*.o
+ 
+# Build folder if you use it
+build/
+*.m51
+Listings
+Objects
+*.mywei
