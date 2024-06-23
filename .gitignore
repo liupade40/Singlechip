@@ -1,6 +1,6 @@
 # Keil generated user options file
 *.uvopt
- 
+*.uvoptx
 # Keil project file
 *.cproj
  
@@ -20,3 +20,6 @@ build/
 Listings
 Objects
 *.mywei
+Listings/
+DebugConfig/
+Objects/
