@@ -12,14 +12,22 @@ void KEY_Init(void){
 
 
 
-uint8_t Key_GetNum(){
-	uint8_t keyNum=0;
+Direction Key_GetDirection(){
+	Direction keyNum=Direction.None;
 	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6)==0){
 	
 		Delay_ms(20);
 		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6)==0);
 		Delay_ms(20);
-		keyNum=1;
+		keyNum=Direction.Up;
+	
+	}
+	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7)==0){
+	
+		Delay_ms(20);
+		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7)==0);
+		Delay_ms(20);
+		keyNum=Direction.Down;
 	
 	}
 	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)==0){
@@ -27,10 +35,17 @@ uint8_t Key_GetNum(){
 		Delay_ms(20);
 		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)==0);
 		Delay_ms(20);
-		keyNum=2;
+		keyNum=Direction.Left;
 	
 	}
+	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_9)==0){
 	
+		Delay_ms(20);
+		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_9)==0);
+		Delay_ms(20);
+		keyNum=Direction.Right;
+	
+	}
 	return keyNum;
 
 }
